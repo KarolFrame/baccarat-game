@@ -1,0 +1,54 @@
+.banker-zone{
+  position: absolute;
+  left: 540px;
+  top: 420px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bet-box{
+  background-color: #3A6D4E;
+  border-radius:20px;
+  padding: 5px 15px;
+}
+
+.player-zone{
+  position: absolute;
+  left: 1015px;
+  top: 420px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+p{
+  margin: 0;
+}
+.banker-zone p, .player-zone p{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.bet-tie, .bet-banker, .bet-player{
+  position: absolute;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  z-index: 4;
+}
+
+.bet-tie{
+  top: 315px;
+  left: 787px;
+}
+.bet-banker{
+  top: 415px;
+  left: 767px;
+}
+.bet-player{
+  top: 515px;
+  left: 767px;
+}

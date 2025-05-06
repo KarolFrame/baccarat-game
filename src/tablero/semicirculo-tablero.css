@@ -52,13 +52,13 @@ li {
   -webkit-transform: rotate(120deg) skewY(-30deg);
   -ms-transform: rotate(120deg) skewY(-30deg);
   transform: rotate(120deg) skewY(-30deg);    
-  border-bottom: 2px solid #356046;
+  border-bottom: 3px solid #2B5138;
 }
 .p4 {
   -webkit-transform: rotate(180deg) skewY(-30deg);
   -ms-transform: rotate(180deg) skewY(-30deg);
   transform: rotate(180deg) skewY(-30deg);    
-  border-bottom: 2px solid #356046;
+  border-bottom: 3px solid #2B5138;
 }
 .p5 {
   -webkit-transform: rotate(240deg) skewY(-30deg);
