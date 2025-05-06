@@ -11,6 +11,7 @@ function Letreros(){
     
     <div className='bet-tie'>
       <p>Tie</p>
+      <p className='tie-secondary-text'>Pays 8 to 1</p>
     </div>
     <div className='bet-banker'>
       <p>Banker</p>

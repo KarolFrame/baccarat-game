@@ -41,9 +41,14 @@ p{
 }
 
 .bet-tie{
-  top: 315px;
-  left: 787px;
+  top: 305px;
+  left: 773px;
 }
+.tie-secondary-text{
+  font-size: 13px;
+  color: #48775a;
+}
+
 .bet-banker{
   top: 415px;
   left: 767px;
