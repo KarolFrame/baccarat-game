@@ -1,0 +1,8 @@
+.tablero_main{
+  width: 1100px;
+  height: 700px;
+  border: 2px solid #286C51;
+  border-radius: 10px;
+  background-color: #005238;
+  overflow: hidden;
+}
