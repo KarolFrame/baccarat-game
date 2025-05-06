@@ -23,7 +23,8 @@ li {
   position: absolute;
   top: 0; right: 0;
   width: 50%; height: 50%;
-  transform-origin: 0% 100%;      
+  transform-origin: 0% 100%;   
+  box-sizing: border-box;   
 }
 .text {
   position: absolute;
@@ -36,53 +37,55 @@ li {
   padding-top: 20px;
 }
 
-li:first-child {
+.p1 {
   -webkit-transform: rotate(0deg) skewY(-30deg);
   -ms-transform: rotate(0deg) skewY(-30deg);
   transform: rotate(0deg) skewY(-30deg);     
 }
-li:nth-child(2) {
+.p2 {
   -webkit-transform: rotate(60deg) skewY(-30deg);
   -ms-transform: rotate(60deg) skewY(-30deg);
   transform: rotate(60deg) skewY(-30deg);     
 }
-li:nth-child(3) {
+.p3 {
   -webkit-transform: rotate(120deg) skewY(-30deg);
   -ms-transform: rotate(120deg) skewY(-30deg);
   transform: rotate(120deg) skewY(-30deg);    
+  border-bottom: 2px solid #356046;
 }
-li:nth-child(4) {
+.p4 {
   -webkit-transform: rotate(180deg) skewY(-30deg);
   -ms-transform: rotate(180deg) skewY(-30deg);
   transform: rotate(180deg) skewY(-30deg);    
+  border-bottom: 2px solid #356046;
 }
-li:nth-child(5) {
+.p5 {
   -webkit-transform: rotate(240deg) skewY(-30deg);
   -ms-transform: rotate(240deg) skewY(-30deg);
   transform: rotate(240deg) skewY(-30deg);    
 }
-li:nth-child(6) {
+.p6 {
   -webkit-transform: rotate(300deg) skewY(-30deg);
   -ms-transform: rotate(300deg) skewY(-30deg);
   transform: rotate(300deg) skewY(-30deg);    
 }
 
-li:first-child .text {
-  background: green; 
+.p1 .text {
+  background: #12331E; 
 }
-li:nth-child(2) .text {
-  background: tomato; 
+.p2 .text {
+  background: #12331E; 
 }
-li:nth-child(3) .text {
-  background: aqua; 
+.p3 .text {
+  background: #12331E; 
 }
-li:nth-child(4) .text {
-  background: yellow;  
+.p4 .text {
+  background: #12331E;  
 }
-li:nth-child(5) .text {
-  background: orange;  
+.p5 .text {
+  background: #12331E;  
 }
-li:nth-child(6) .text {
-  background: purple;  
+.p6 .text {
+  background: #12331E;  
 }
 

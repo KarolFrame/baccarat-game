@@ -5,12 +5,12 @@ function Semicirculo(){
     <>
     <div className='contenedor-principal'>
       <ul className="circle">
-        <li><div className="text">1</div></li>
-        <li><div className="text">2</div></li>
-        <li><div className="text">3</div></li>
-        <li><div className="text">4</div></li>
-        <li><div className="text">5</div></li>
-        <li><div className="text">6</div></li>
+        <li className='p1'><div className="text"></div></li>
+        <li className='p2'><div className="text"></div></li>
+        <li className='p3'><div className="text"></div></li>
+        <li className='p4'><div className="text"></div></li>
+        <li className='p5'><div className="text"></div></li>
+        <li className='p6'><div className="text"></div></li>
       </ul>
     </div>
     </>
