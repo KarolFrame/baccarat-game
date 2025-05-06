@@ -1,0 +1,42 @@
+.semicirculo-tablero{
+  position: relative;
+  bottom: 330px;
+  border: 2px solid #286C51;
+  border-radius: 100%;
+  background-color: #003016;
+  width: 850px;
+  height: auto;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center ;
+}
+
+.segundo-semicirculo{
+  position: absolute;
+  bottom: 100px;
+  border-radius: 100%;
+  background-color: #004021;
+  width: 680px;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+.tercer-semicirculo{
+  position: absolute;
+  bottom: 210px;
+  border-radius: 100%;
+  background-color: #003016;
+  width: 490px;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+.cuarto-semicirculo{
+  position: absolute;
+  bottom: 310px;
+  border-radius: 100%;
+  background-color: #004021;
+  width: 300px;
+  height: auto;
+  aspect-ratio: 1/1;
+}
