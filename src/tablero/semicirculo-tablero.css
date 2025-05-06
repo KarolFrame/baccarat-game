@@ -17,6 +17,7 @@
   list-style: none;
   overflow: hidden;
   transform: rotate(-30deg);
+  z-index: 2;
 }
 li {
   overflow: hidden;
@@ -70,22 +71,100 @@ li {
   transform: rotate(300deg) skewY(-30deg);    
 }
 
-.p1 .text {
-  background: #12331E; 
+
+
+.circle2 {
+  position: absolute;
+  bottom: 256px;
+  left: 125px;
+  background-color:  #12331E;
+  padding: 0;
+  margin: 1em auto;
+  width: 850px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
 }
-.p2 .text {
-  background: #12331E; 
+.circle3 {
+  position: absolute;
+  bottom: 95px;
+  left: 80px;
+  background-color:  #174228;
+  width: 690px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
 }
-.p3 .text {
-  background: #12331E; 
+.circle4 {
+  position: absolute;
+  bottom: 200px;
+  left: 175px;
+  background-color:  #12331E;
+  width: 500px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
 }
-.p4 .text {
-  background: #12331E;  
-}
-.p5 .text {
-  background: #12331E;  
-}
-.p6 .text {
-  background: #12331E;  
+.circle5 {
+  position: absolute;
+  bottom: 570px;
+  left: 395px;
+  background-color:  #174228;
+  width: 310px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 3;
 }
 
+.player-section{
+  position: absolute;
+  background-color: #12331E;
+  bottom: 37px;
+  left: -5px;
+  margin: 1em auto;
+  width: 850px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 0;
+
+  &&:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
+.banker-section{
+  position: absolute;
+  background-color: #174228;
+  bottom: 67px;
+  right: 86px;
+  margin: 1em auto;
+  width: 690px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+
+  &&:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
+.tie-section{
+  position: absolute;
+  background-color: #12331E;
+  bottom: 153px;
+  right: 183px;
+  margin: 1em auto;
+  width: 500px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+
+  &&:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
