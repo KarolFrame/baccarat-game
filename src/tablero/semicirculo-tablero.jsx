@@ -1,9 +1,33 @@
 import './semicirculo-tablero.css'
+import './letreros-tablero.css'
 
 function Semicirculo(){
   return (
     <>
     <div className='contenedor-principal'>
+      <div className='banker-zone'>
+        <p>Banker</p>
+        <div className='bet-box'>0</div>
+      </div>
+      
+      <div className='bet-tie'>
+        <p>Tie</p>
+        <p className='tie-secondary-text'>Pays 8 to 1</p>
+      </div>
+      <div className='bet-banker'>
+        <p>Banker</p>
+      </div>
+      <div className='bet-player'>
+        <p>Player</p>
+      </div>
+
+      <div className='player-zone'>
+        <p>Player</p>
+        <div className='bet-box'>
+          0
+        </div>
+      </div>
+
       <div className='circle5'></div>
       <ul className="circle">
         <li className='p1'><div className="text"></div></li>

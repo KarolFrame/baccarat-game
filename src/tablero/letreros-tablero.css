@@ -1,7 +1,7 @@
 .banker-zone{
   position: absolute;
-  left: 540px;
-  top: 420px;
+  left: 300px;
+  top: 280px;
   z-index: 4;
   display: flex;
   flex-direction: column;
@@ -16,8 +16,8 @@
 
 .player-zone{
   position: absolute;
-  left: 1015px;
-  top: 420px;
+  left: 750px;
+  top: 280px;
   z-index: 4;
   display: flex;
   flex-direction: column;
@@ -41,8 +41,8 @@ p{
 }
 
 .bet-tie{
-  top: 305px;
-  left: 773px;
+  top: 150px;
+  left: 523px;
 }
 .tie-secondary-text{
   font-size: 13px;
@@ -50,10 +50,10 @@ p{
 }
 
 .bet-banker{
-  top: 415px;
-  left: 767px;
+  top: 265px;
+  left: 516px;
 }
 .bet-player{
-  top: 515px;
-  left: 767px;
+  top: 360px;
+  left: 521px;
 }
