@@ -1,10 +1,11 @@
 import './semicirculo-tablero.css'
 import './letreros-tablero.css'
 
-function Semicirculo(){
+function CircleGameZone(){
   return (
     <>
     <div className='contenedor-principal'>
+      {/*LETREROS*/}
       <div className='banker-zone'>
         <p>Banker</p>
         <div className='bet-box'>0</div>
@@ -28,6 +29,7 @@ function Semicirculo(){
         </div>
       </div>
 
+      {/*TABLERO SEMICIRCULAR*/}
       <div className='circle5'></div>
       <ul className="circle">
         <li className='p1'><div className="text"></div></li>
@@ -52,4 +54,4 @@ function Semicirculo(){
   )
 }
 
-export default Semicirculo
+export default CircleGameZone

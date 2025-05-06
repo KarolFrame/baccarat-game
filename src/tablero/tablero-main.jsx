@@ -1,12 +1,12 @@
 import "./tablero-main.css"
-import Semicirculo from "./semicirculo-tablero.jsx"
+import CircleGameZone from "./semicirculo-tablero.jsx"
 
 function TableroMain(){
 
   return (
     <>
     <div className="tablero_main">
-      <Semicirculo />
+      <CircleGameZone />
     </div>
     </>
   )
