@@ -1,6 +1,7 @@
 import "./tablero-main.css"
 import CircleGameZone from "./semicirculo-tablero.jsx"
 import Card from "./card.jsx"
+import BaccaratTable from "./BaccaratTable.jsx"
 
 
 function TableroMain(){
@@ -9,6 +10,7 @@ function TableroMain(){
     <>
     <div className="tablero_main">
       <CircleGameZone />
+      <BaccaratTable />
     </div>
     </>
   )
