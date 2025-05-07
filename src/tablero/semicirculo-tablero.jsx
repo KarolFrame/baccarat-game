@@ -1,5 +1,6 @@
 import './semicirculo-tablero.css'
 import './letreros-tablero.css'
+import Card from './card'
 
 function CircleGameZone(){
   return (
@@ -7,6 +8,10 @@ function CircleGameZone(){
     <div className='contenedor-principal'>
       {/*LETREROS*/}
       <div className='banker-zone'>
+        <div className='cards-container'>
+          <Card number="A" suit="hearts" top={0} left={0} />
+          <Card number="K" suit="clubs" top={10} left={30} />
+        </div>
         <p>Banker</p>
         <div className='bet-box'>0</div>
       </div>
@@ -23,6 +28,10 @@ function CircleGameZone(){
       </div>
 
       <div className='player-zone'>
+        <div className='cards-container'>
+          <Card number="10" suit="spades" top={0} left={0} />
+          <Card number="7" suit="diamonds" top={10} left={30} />
+        </div>
         <p>Player</p>
         <div className='bet-box'>
           0
