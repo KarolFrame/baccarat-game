@@ -9,8 +9,8 @@ function CircleGameZone(){
       {/*LETREROS*/}
       <div className='banker-zone'>
         <div className='cards-container'>
-          <Card number="A" suit="hearts" top={0} left={0} />
-          <Card number="K" suit="clubs" top={10} left={30} />
+          <div><Card number="A" suit="hearts" top={0} left={0} /></div>
+          <div style={{top: 10, left: 30, position: "absolute"}}><Card number="K" suit="clubs" /></div>
         </div>
         <p>Banker</p>
         <div className='bet-box'>0</div>
