@@ -1,0 +1,50 @@
+.card {
+  background-color: white;
+  width: 65px;
+  height: 110px;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 7px;
+  position: absolute;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+} 
+  
+.card-symbol {
+  font-size: 45px !important;
+  text-align: center;
+}
+
+.card-text {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  line-height: 0.8;
+}
+
+
+.card-number {
+  font-size: 13px !important;
+}
+
+.card-text.red {
+  color: red;
+}
+
+.card-text.black {
+  color: black;
+}
+
+.card-symbol.red {
+  color: red;
+}
+
+.card-symbol.black {
+  color: black;
+}
+
+.upside-down {
+  transform: rotate(180deg);
+  text-align: left;
+}
