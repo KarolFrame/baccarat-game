@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import ChipButton from './chip-button';
 import './BaccaratTable.css';
 
 function BaccaratTable() {
-  const chipValues = [1, 5, 10, 25, 100];
   const [wager, setWager] = useState(0);
-  const [selectedChip, setSelectedChip] = useState(null);
+  //const [selectedChip, setSelectedChip] = useState(null);
   const [betHistory, setBetHistory] = useState([]);
 
   const addChip = (value) => {
@@ -25,23 +25,6 @@ function BaccaratTable() {
     setWager(0);
   };
 
-  const getChipColorClass = (val) => {
-    switch (val) {
-      case 1:
-        return 'orange';
-      case 5:
-        return 'green';
-      case 10:
-        return 'blue';
-      case 25:
-        return 'purple';
-      case 100:
-        return 'red';
-      default:
-        return '';
-    }
-  };
-
   return (
     <div className="game-container">
       <div className="wager-section">
@@ -59,16 +42,11 @@ function BaccaratTable() {
       </div>
 
       <div className="chip-buttons">
-        {chipValues.map((val) => (
-          <div
-            key={val}
-            onClick={() => addChip(val)}
-            className={`pokerchip ${getChipColorClass(val)}`}
-            data-value={val}
-          >
-            <span>{val}</span>
-          </div>
-        ))}
+        <ChipButton number="1" styles={{borderColor: "#f39c12", background: "#f1c40f"}} manejoEvento={()=>{addChip(1)}}/>
+        <ChipButton number="5" styles={{borderColor: "green", background: "green"}} manejoEvento={()=>{addChip(5)}}/>
+        <ChipButton number="10" styles={{borderColor: "lightblue", background: "lightblue"}} manejoEvento={()=>{addChip(10)}}/>
+        <ChipButton number="25" styles={{borderColor: "purple", background: "purple"}} manejoEvento={()=>{addChip(25)}}/>
+        <ChipButton number="100" styles={{borderColor: "red", background: "red"}} manejoEvento={()=>{addChip(100)}}/>
       </div>
 
       <div className="action-buttons">
