@@ -14,7 +14,7 @@ function Card({ number, suit}) {
 
   return (
     <>
-    <div className="card hidden">
+    <div className="card">
       <p className={`card-text card-number ${color}`}>{number} <br /> {symbol}</p>
       <p className={`card-symbol ${color}`}>{symbol}</p>
       <p className={`card-text card-number upside-down ${color}`}>{number} <br /> {symbol}</p>
