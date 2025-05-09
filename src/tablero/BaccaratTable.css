@@ -4,9 +4,9 @@
     margin: 0 auto;
     padding: 20px;
     border-radius: 30px;
-    position: absolute; 
-    bottom: 120px; 
-    left: 43%;
+    position: relative; 
+    bottom: 150px; 
+    left: 300px;
     transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
@@ -94,12 +94,6 @@
   .pokerchip:hover {
     transform: scale(1.1);
   }
-  
-  .orange { border-color: #f39c12; background: #f1c40f; }
-  .green { border-color: green; background: green; }
-  .blue { border-color: lightblue; background: lightblue; }
-  .purple { border-color: purple; background: purple; }
-  .red { border-color: red; background: red; }
   
   .action-buttons {
     display: flex;
