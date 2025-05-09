@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import ChipButton from './chip-button';
 import './BaccaratTable.css';
-import SpawnArea from './spawn-area/spawn-area';
 
-function BaccaratTable({zonaSeleccionada}) {
+function BaccaratTable({obtenerLista}) {
   const [wager, setWager] = useState(0);
   const [selectedChips, setSelectedChips] = useState([]);
   const [betHistory, setBetHistory] = useState([]);
@@ -52,15 +51,9 @@ function BaccaratTable({zonaSeleccionada}) {
   }, [wager, betHistory]);
 
   useEffect(()=>{
-    console.log(`Desde BaccaratTable => ${zonaSeleccionada}`);
-  }, [zonaSeleccionada])
-
-  useEffect(()=>{
-    // const tieSpawn = document.querySelector("#tie-spawn");
-    // const bankerSpawn = document.querySelector("#banker-spawn");
-    // const playerSpawn = document.querySelector("#player-spawn");
     console.log(selectedChips);
-  }, [selectedChips]);
+    obtenerLista(selectedChips)
+  }, [selectedChips, obtenerLista]);
 
   return (
     <div className="game-container">
@@ -91,9 +84,6 @@ function BaccaratTable({zonaSeleccionada}) {
           <button onClick={clearBet} className="clear-button">Clear</button>
         </div>
       </div>
-      <SpawnArea id="tie-spawn"/>
-      <SpawnArea id="banker-spawn"/>
-      <SpawnArea id="player-spawn"/>
     </div>
   );
 }
