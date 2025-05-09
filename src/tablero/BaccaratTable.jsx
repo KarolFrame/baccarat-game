@@ -8,6 +8,34 @@ function BaccaratTable({zonaSeleccionada}) {
   //const [selectedChip, setSelectedChip] = useState(null);
   const [betHistory, setBetHistory] = useState([]);
 
+  const chipButtonsInfo = {
+    orangeChip: {
+      value: 1,
+      backgroundColor: "#f1c40f",
+      borderColor: "#f39c12"
+    },
+    greenChip: {
+      value: 5,
+      backgroundColor: "green",
+      borderColor: "green"
+    },
+    blueChip: {
+      value: 10,
+      backgroundColor: "lightblue",
+      borderColor: "lightblue"
+    },
+    purpleChip: {
+      value: 25,
+      backgroundColor: "purple",
+      borderColor: "purple"
+    },
+    redChip: {
+      value: 100,
+      backgroundColor: "red",
+      borderColor: "red"
+    }
+  }
+
   const addChip = (value) => {
     setBetHistory([...betHistory, value]);
     setWager(wager + value);
@@ -56,11 +84,9 @@ function BaccaratTable({zonaSeleccionada}) {
       </div>
 
       <div className="chip-buttons">
-        <ChipButton number="1" styles={{borderColor: "#f39c12", background: "#f1c40f"}} manejoEvento={handlerChipClick}/>
-        <ChipButton number="5" styles={{borderColor: "green", background: "green"}} manejoEvento={handlerChipClick}/>
-        <ChipButton number="10" styles={{borderColor: "lightblue", background: "lightblue"}} manejoEvento={handlerChipClick}/>
-        <ChipButton number="25" styles={{borderColor: "purple", background: "purple"}} manejoEvento={handlerChipClick}/>
-        <ChipButton number="100" styles={{borderColor: "red", background: "red"}} manejoEvento={handlerChipClick}/>
+        {Object.entries(chipButtonsInfo).map(([key, prop])=>(
+          <ChipButton key={key} number={prop.value} styles={{borderColor: prop.borderColor, background:prop.backgroundColor}} manejoEvento={handlerChipClick}/>
+        ))}
       </div>
 
       <div className="action-buttons">
