@@ -2,8 +2,29 @@ import './semicirculo-tablero.css'
 import './letreros-tablero.css'
 import Card from './card'
 import Deck from './deck.jsx'
+import { useState } from 'react'
 
 function CircleGameZone(){
+  const [zona, seleccionarZona] = useState();
+
+  const _paintZone = (event)=>{
+    const tieZone = document.querySelector(".tie-section")
+    const bankerZone = document.querySelector(".banker-section")
+    const playerZone = document.querySelector(".player-section")
+
+    tieZone.classList.remove("activateGameZone")
+    bankerZone.classList.remove("activateGameZone")
+    playerZone.classList.remove("activateGameZone")
+
+    event.target.classList.add("activateGameZone")
+  }
+  
+  const handlerGameZoneClick = (event)=>{
+    _paintZone(event);
+    
+
+  }
+
   return (
     <>
     <div className='contenedor-principal'>
@@ -52,9 +73,9 @@ function CircleGameZone(){
         <li className='p3'><div className="text"></div></li>
         <li className='p4'>
           <div className="text">
-            <div className='tie-section'></div>
-            <div className='banker-section'></div>
-            <div className='player-section'></div>
+            <div className='tie-section' onClick={handlerGameZoneClick}></div>
+            <div className='banker-section' onClick={handlerGameZoneClick}></div>
+            <div className='player-section' onClick={handlerGameZoneClick}></div>
           </div>
         </li>
         <li className='p5'><div className="text"></div></li>
