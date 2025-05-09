@@ -11,6 +11,21 @@
   position: absolute;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 } 
+
+.cardBack {
+  background-color: rgb(223, 48, 48);
+  width: 55px;
+  height: 100px;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 7px;
+  position: absolute;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  border: solid 8px white;
+} 
   
 .card-symbol {
   font-size: 45px !important;
@@ -28,23 +43,27 @@
   font-size: 13px !important;
 }
 
-.card-text.red {
+.card-text.red-card {
   color: red;
 }
 
-.card-text.black {
+.card-text.black-card {
   color: black;
 }
 
-.card-symbol.red {
+.card-symbol.red-card {
   color: red;
 }
 
-.card-symbol.black {
+.card-symbol.black-card {
   color: black;
 }
 
 .upside-down {
   transform: rotate(180deg);
   text-align: left;
+}
+
+.hidden{
+  display: none;
 }

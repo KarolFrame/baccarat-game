@@ -142,6 +142,11 @@ li {
   top: -140px;
   left:-40px;
 }
+.cardsBack-container{
+  position: absolute;
+  top: 150px;
+  left:140px;
+}
 
 .banker-section{
   position: absolute;

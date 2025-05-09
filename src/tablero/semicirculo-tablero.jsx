@@ -1,6 +1,7 @@
 import './semicirculo-tablero.css'
 import './letreros-tablero.css'
 import Card from './card'
+import Deck from './deck.jsx'
 
 function CircleGameZone(){
   return (
@@ -9,7 +10,7 @@ function CircleGameZone(){
       {/*LETREROS*/}
       <div className='banker-zone'>
         <div className='cards-container'>
-          <div><Card number="A" suit="hearts" top={0} left={0} /></div>
+          <div><Card number="A" suit="hearts"/></div>
           <div style={{top: 10, left: 30, position: "absolute"}}><Card number="K" suit="clubs" /></div>
         </div>
         <p>Banker</p>
@@ -29,8 +30,8 @@ function CircleGameZone(){
 
       <div className='player-zone'>
         <div className='cards-container'>
-          <Card number="10" suit="spades" top={0} left={0} />
-          <Card number="7" suit="diamonds" top={10} left={30} />
+          <Card number="10" suit="spades"/>
+          <div style={{top: 10, left: 30, position: "absolute"}}><Card number="7" suit="diamonds"/></div>
         </div>
         <p>Player</p>
         <div className='bet-box'>
@@ -39,7 +40,12 @@ function CircleGameZone(){
       </div>
 
       {/*TABLERO SEMICIRCULAR*/}
-      <div className='circle5'></div>
+      <div className='circle5'>
+      <div className='cardsBack-container'>
+        <Deck/>
+      </div>
+
+      </div>
       <ul className="circle">
         <li className='p1'><div className="text"></div></li>
         <li className='p2'><div className="text"></div></li>

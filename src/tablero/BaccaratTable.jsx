@@ -42,6 +42,27 @@ function BaccaratTable() {
     }
   };
 
+  /*const _getPlayerCards = () =>{
+    return document.querySelectorAll('.player-zone .cards-container .card')
+  }
+
+  const _getBankerCards = () =>{
+    return document.querySelectorAll('.banker-zone .cards-container .card')
+  }
+
+  const _setRandomCard = (cards) =>{
+    cards.array.forEach(card => {
+      card
+    });
+  }
+
+  const startGame = () =>{
+    const playerCards = _getPlayerCards();
+    const bankerCards = _getBankerCards();
+
+    _setRandomCard(_getPlayerCards());
+  }*/
+
   return (
     <div className="game-container">
       <div className="wager-section">
@@ -72,7 +93,7 @@ function BaccaratTable() {
       </div>
 
       <div className="action-buttons">
-        <button className="start-button">Start Game</button>
+        <button className="start-button" onClick ={startGame}>Start Game</button>
         <div className="undo-clear-buttons">
           <button onClick={undoBet} className="undo-button">Undo bet</button>
           <button onClick={clearBet} className="clear-button">Clear</button>
