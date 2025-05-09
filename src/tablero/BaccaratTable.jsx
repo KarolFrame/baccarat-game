@@ -5,36 +5,16 @@ import SpawnArea from './spawn-area/spawn-area';
 
 function BaccaratTable({zonaSeleccionada}) {
   const [wager, setWager] = useState(0);
-  //const [selectedChip, setSelectedChip] = useState(null);
+  const [selectedChips, setSelectedChips] = useState([]);
   const [betHistory, setBetHistory] = useState([]);
 
-  const chipButtonsInfo = {
-    orangeChip: {
-      value: 1,
-      backgroundColor: "#f1c40f",
-      borderColor: "#f39c12"
-    },
-    greenChip: {
-      value: 5,
-      backgroundColor: "green",
-      borderColor: "green"
-    },
-    blueChip: {
-      value: 10,
-      backgroundColor: "lightblue",
-      borderColor: "lightblue"
-    },
-    purpleChip: {
-      value: 25,
-      backgroundColor: "purple",
-      borderColor: "purple"
-    },
-    redChip: {
-      value: 100,
-      backgroundColor: "red",
-      borderColor: "red"
-    }
-  }
+  const chipButtonsInfo = [
+    {key: "orangeBtn", value: 1, backgroundColor: "#f1c40f", borderColor: "#f39c12"},
+    {key: "greenBtn", value: 5, backgroundColor: "green", borderColor: "green"},
+    {key: "blueBtn", value: 10, backgroundColor: "lightblue", borderColor: "lightblue"},
+    {key: "purpleBtn", value: 25, backgroundColor: "purple", borderColor: "purple"},
+    {key: "redBtn", value: 100, backgroundColor: "red", borderColor: "red"}
+  ];
 
   const addChip = (value) => {
     setBetHistory([...betHistory, value]);
@@ -46,17 +26,25 @@ function BaccaratTable({zonaSeleccionada}) {
       const last = betHistory[betHistory.length - 1];
       setBetHistory(betHistory.slice(0, -1));
       setWager(wager - last);
+      setSelectedChips(selectedChips.slice(0, -1));
     }
   };
 
   const clearBet = () => {
     setBetHistory([]);
     setWager(0);
+    setSelectedChips([]);
   };
 
+  const capturarFichas = (event)=>{
+    const infoChip = chipButtonsInfo.filter((chip) => parseInt(event.target.innerText) === chip.value)
+    setSelectedChips([...selectedChips, infoChip[0]]);
+    if(selectedChips.length > 3) {setSelectedChips(selectedChips.slice(0, -1))}
+  }
+
   const handlerChipClick = (event)=>{
-    console.log(event);
     addChip(parseInt(event.target.innerText));
+    capturarFichas(event);
   }
 
   useEffect(()=>{
@@ -66,6 +54,13 @@ function BaccaratTable({zonaSeleccionada}) {
   useEffect(()=>{
     console.log(`Desde BaccaratTable => ${zonaSeleccionada}`);
   }, [zonaSeleccionada])
+
+  useEffect(()=>{
+    // const tieSpawn = document.querySelector("#tie-spawn");
+    // const bankerSpawn = document.querySelector("#banker-spawn");
+    // const playerSpawn = document.querySelector("#player-spawn");
+    console.log(selectedChips);
+  }, [selectedChips]);
 
   return (
     <div className="game-container">
@@ -84,8 +79,8 @@ function BaccaratTable({zonaSeleccionada}) {
       </div>
 
       <div className="chip-buttons">
-        {Object.entries(chipButtonsInfo).map(([key, prop])=>(
-          <ChipButton key={key} number={prop.value} styles={{borderColor: prop.borderColor, background:prop.backgroundColor}} manejoEvento={handlerChipClick}/>
+        {chipButtonsInfo.map((chip)=>(
+          <ChipButton key={chip.key} number={chip.value} styles={{borderColor: chip.borderColor, background: chip.backgroundColor}} manejoEvento={handlerChipClick}/>
         ))}
       </div>
 
