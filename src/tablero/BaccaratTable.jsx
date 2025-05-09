@@ -3,7 +3,7 @@ import ChipButton from './chip-button';
 import './BaccaratTable.css';
 import SpawnArea from './spawn-area/spawn-area';
 
-function BaccaratTable() {
+function BaccaratTable({zonaSeleccionada}) {
   const [wager, setWager] = useState(0);
   //const [selectedChip, setSelectedChip] = useState(null);
   const [betHistory, setBetHistory] = useState([]);
@@ -26,11 +26,6 @@ function BaccaratTable() {
     setWager(0);
   };
 
-  // WIP
-  // const spawnChip = () => {
-
-  // }
-
   const handlerChipClick = (event)=>{
     console.log(event);
     addChip(parseInt(event.target.innerText));
@@ -38,8 +33,11 @@ function BaccaratTable() {
 
   useEffect(()=>{
     console.log({wager, betHistory});
-    
   }, [wager, betHistory]);
+
+  useEffect(()=>{
+    console.log(`Desde BaccaratTable => ${zonaSeleccionada}`);
+  }, [zonaSeleccionada])
 
   return (
     <div className="game-container">
@@ -60,7 +58,7 @@ function BaccaratTable() {
       <div className="chip-buttons">
         <ChipButton number="1" styles={{borderColor: "#f39c12", background: "#f1c40f"}} manejoEvento={handlerChipClick}/>
         <ChipButton number="5" styles={{borderColor: "green", background: "green"}} manejoEvento={handlerChipClick}/>
-        <ChipButton number="10" styles={{borderColor: "lightblue", background: "lightblue"}} manejoEvento={()=>{addChip(10)}}/>
+        <ChipButton number="10" styles={{borderColor: "lightblue", background: "lightblue"}} manejoEvento={handlerChipClick}/>
         <ChipButton number="25" styles={{borderColor: "purple", background: "purple"}} manejoEvento={handlerChipClick}/>
         <ChipButton number="100" styles={{borderColor: "red", background: "red"}} manejoEvento={handlerChipClick}/>
       </div>

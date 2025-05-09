@@ -4,8 +4,8 @@ import Card from './card'
 import Deck from './deck.jsx'
 import { useEffect, useState } from 'react'
 
-function CircleGameZone(){
-  const [zona, seleccionarZona] = useState("");
+function CircleGameZone({obtenerZonaSeleccionada}){
+  const [zona, seleccionarZona] = useState(null);
 
   const _paintZone = (event)=>{
     const tieZone = document.querySelector(".tie-section")
@@ -25,8 +25,9 @@ function CircleGameZone(){
   }
 
   useEffect(()=>{
-    console.log(zona);
-  },[zona])
+    console.log(`Desde CircleGameZone => ${zona}`);
+    obtenerZonaSeleccionada(zona);
+  },[zona, obtenerZonaSeleccionada])
 
   return (
     <>
