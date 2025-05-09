@@ -1,18 +1,23 @@
 .chip-spawn-area{
   position: absolute;
-  left: 500px;
+  left: 493px;
   width: 100px;
   height: 100px;
   border: 1px solid white;
   z-index: 10;
+  display: none;
 }
 
 #tie-spawn{
-  top: 125px;
+  bottom: 490px;
 }
 #banker-spawn{
-  top: 230px;
+  bottom: 383px;
 }
 #player-spawn{
-  top: 323px;
+  bottom: 290px;
+}
+
+.activateSpawnArea{
+  display: visible !important;
 }

@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ChipButton from './chip-button';
 import './BaccaratTable.css';
+import SpawnArea from './spawn-area/spawn-area';
 
 function BaccaratTable() {
   const [wager, setWager] = useState(0);
@@ -25,6 +26,21 @@ function BaccaratTable() {
     setWager(0);
   };
 
+  // WIP
+  // const spawnChip = () => {
+
+  // }
+
+  const handlerChipClick = (event)=>{
+    console.log(event);
+    addChip(parseInt(event.target.innerText));
+  }
+
+  useEffect(()=>{
+    console.log({wager, betHistory});
+    
+  }, [wager, betHistory]);
+
   return (
     <div className="game-container">
       <div className="wager-section">
@@ -42,11 +58,11 @@ function BaccaratTable() {
       </div>
 
       <div className="chip-buttons">
-        <ChipButton number="1" styles={{borderColor: "#f39c12", background: "#f1c40f"}} manejoEvento={()=>{addChip(1)}}/>
-        <ChipButton number="5" styles={{borderColor: "green", background: "green"}} manejoEvento={()=>{addChip(5)}}/>
+        <ChipButton number="1" styles={{borderColor: "#f39c12", background: "#f1c40f"}} manejoEvento={handlerChipClick}/>
+        <ChipButton number="5" styles={{borderColor: "green", background: "green"}} manejoEvento={handlerChipClick}/>
         <ChipButton number="10" styles={{borderColor: "lightblue", background: "lightblue"}} manejoEvento={()=>{addChip(10)}}/>
-        <ChipButton number="25" styles={{borderColor: "purple", background: "purple"}} manejoEvento={()=>{addChip(25)}}/>
-        <ChipButton number="100" styles={{borderColor: "red", background: "red"}} manejoEvento={()=>{addChip(100)}}/>
+        <ChipButton number="25" styles={{borderColor: "purple", background: "purple"}} manejoEvento={handlerChipClick}/>
+        <ChipButton number="100" styles={{borderColor: "red", background: "red"}} manejoEvento={handlerChipClick}/>
       </div>
 
       <div className="action-buttons">
@@ -56,6 +72,9 @@ function BaccaratTable() {
           <button onClick={clearBet} className="clear-button">Clear</button>
         </div>
       </div>
+      <SpawnArea id="tie-spawn"/>
+      <SpawnArea id="banker-spawn"/>
+      <SpawnArea id="player-spawn"/>
     </div>
   );
 }
