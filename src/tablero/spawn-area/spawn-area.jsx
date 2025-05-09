@@ -16,32 +16,30 @@ function SpawnArea(props){
   return (
     <>
       <div className="chip-spawn-area" id={id}>
-        {lista.map((chip)=>{
-          if(zonaSeleccionada === "tieBtn"){
-            tieSpawn.style.display = "visible";
-            bankerSpawn.style.display = "none";
-            playerSpawn.style.display = "none";
-            return (
-              <ChipButton number={chip.value} styles={{borderColor: chip.borderColor, background: chip.backgroundColor}}/>
-            )
-          }
-          if(zonaSeleccionada === "bankerBtn"){
-            tieSpawn.style.display = "none";
-            bankerSpawn.style.display = "visible";
-            playerSpawn.style.display = "none";
-            return (
-              <ChipButton number={chip.value} styles={{borderColor: chip.borderColor, background: chip.backgroundColor}}/>
-            )
-          }
-          if(zonaSeleccionada === "playerBtn"){
-            tieSpawn.style.display = "none";
-            bankerSpawn.style.display = "none";
-            playerSpawn.style.display = "visible";
-            return (
-              <ChipButton number={chip.value} styles={{borderColor: chip.borderColor, background: chip.backgroundColor}}/>
-            )
-          }
-        })}
+        <div className='chip-relative-spawn'>
+          {lista.map((chip)=>{
+            if(zonaSeleccionada){
+              if(zonaSeleccionada === "tieBtn"){
+                tieSpawn.style.display = "visible";
+                bankerSpawn.style.display = "none";
+                playerSpawn.style.display = "none";
+              }
+              if(zonaSeleccionada === "bankerBtn"){
+                tieSpawn.style.display = "none";
+                bankerSpawn.style.display = "visible";
+                playerSpawn.style.display = "none";
+              }
+              if(zonaSeleccionada === "playerBtn"){
+                tieSpawn.style.display = "none";
+                bankerSpawn.style.display = "none";
+                playerSpawn.style.display = "visible";
+              }
+              return (
+                  <ChipButton number={chip.value} styles={{borderColor: chip.borderColor, background: chip.backgroundColor}}/>
+              )
+            }
+          })}
+        </div>
       </div>
     </>
   )
