@@ -4,9 +4,9 @@
     margin: 0 auto;
     padding: 20px;
     border-radius: 30px;
-    position: absolute; 
-    bottom: 120px; 
-    left: 43%;
+    position: relative; 
+    bottom: 150px; 
+    left: 300px;
     transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
