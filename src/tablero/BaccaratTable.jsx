@@ -38,7 +38,7 @@ function BaccaratTable({onStart, buttonDisabled, obtenerLista}) {
 
   const capturarFichas = (event)=>{
     const infoChip = chipButtonsInfo.filter((chip) => parseInt(event.target.innerText) === chip.value)
-    setSelectedChips([...selectedChips, infoChip[0]]);
+    setSelectedChips([infoChip[0], ...selectedChips]);
     if(selectedChips.length > 3) {setSelectedChips(selectedChips.slice(0, -1))}
   }
 
