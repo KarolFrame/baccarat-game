@@ -56,9 +56,28 @@ function TableroMain(){
   const [estadoZona, setEstadoZona] = useState(null)
   const [listaFichas, setListaFichas] = useState([])
   
+  const tieSpawn = document.querySelector("#tie-spawn");
+  const bankerSpawn = document.querySelector("#banker-spawn");
+  const playerSpawn = document.querySelector("#player-spawn");
+
   useEffect(()=>{
     console.log(`Desde TableroMain => ${estadoZona}`);
-  },[estadoZona])
+    if(estadoZona === "tieBtn"){
+      tieSpawn.style.display = "block";
+      bankerSpawn.style.display = "none";
+      playerSpawn.style.display = "none";
+    }
+    if(estadoZona === "bankerBtn"){
+      tieSpawn.style.display = "none";
+      bankerSpawn.style.display = "block";
+      playerSpawn.style.display = "none";
+    }
+    if(estadoZona === "playerBtn"){
+      tieSpawn.style.display = "none";
+      bankerSpawn.style.display = "none";
+      playerSpawn.style.display = "block";
+    }
+  },[estadoZona, tieSpawn, bankerSpawn, playerSpawn])
 
   return (
     <>
