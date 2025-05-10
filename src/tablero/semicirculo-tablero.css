@@ -180,3 +180,11 @@ li {
     background-color: rgba(255, 255, 255, 0.3);
   }
 }
+
+.activateGameZone{
+  background-color: #30A400;
+
+  &&:hover{
+    background-color: #87bd70;
+  }
+}

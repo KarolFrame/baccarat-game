@@ -1,12 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ChipButton from './chip-button';
 import './BaccaratTable.css';
 import StartButton from './start-button';
 
-function BaccaratTable({onStart, buttonDisabled}) {
+function BaccaratTable({onStart, buttonDisabled, obtenerLista}) {
   const [wager, setWager] = useState(0);
-  //const [selectedChip, setSelectedChip] = useState(null);
+  const [selectedChips, setSelectedChips] = useState([]);
   const [betHistory, setBetHistory] = useState([]);
+
+  const chipButtonsInfo = [
+    {key: "orangeBtn", value: 1, backgroundColor: "#f1c40f", borderColor: "#f39c12"},
+    {key: "greenBtn", value: 5, backgroundColor: "green", borderColor: "green"},
+    {key: "blueBtn", value: 10, backgroundColor: "lightblue", borderColor: "lightblue"},
+    {key: "purpleBtn", value: 25, backgroundColor: "purple", borderColor: "purple"},
+    {key: "redBtn", value: 100, backgroundColor: "red", borderColor: "red"}
+  ];
 
   const addChip = (value) => {
     setBetHistory([...betHistory, value]);
@@ -18,13 +26,35 @@ function BaccaratTable({onStart, buttonDisabled}) {
       const last = betHistory[betHistory.length - 1];
       setBetHistory(betHistory.slice(0, -1));
       setWager(wager - last);
+      setSelectedChips(selectedChips.slice(0, -1));
     }
   };
 
   const clearBet = () => {
     setBetHistory([]);
     setWager(0);
+    setSelectedChips([]);
   };
+
+  const capturarFichas = (event)=>{
+    const infoChip = chipButtonsInfo.filter((chip) => parseInt(event.target.innerText) === chip.value)
+    setSelectedChips([...selectedChips, infoChip[0]]);
+    if(selectedChips.length > 3) {setSelectedChips(selectedChips.slice(0, -1))}
+  }
+
+  const handlerChipClick = (event)=>{
+    addChip(parseInt(event.target.innerText));
+    capturarFichas(event);
+  }
+
+  useEffect(()=>{
+    console.log({wager, betHistory});
+  }, [wager, betHistory]);
+
+  useEffect(()=>{
+    console.log(selectedChips);
+    obtenerLista(selectedChips)
+  }, [selectedChips, obtenerLista]);
 
   return (
     <div className="game-container">
@@ -43,11 +73,9 @@ function BaccaratTable({onStart, buttonDisabled}) {
       </div>
 
       <div className="chip-buttons">
-        <ChipButton number="1" styles={{borderColor: "#f39c12", background: "#f1c40f"}} manejoEvento={()=>{addChip(1)}}/>
-        <ChipButton number="5" styles={{borderColor: "green", background: "green"}} manejoEvento={()=>{addChip(5)}}/>
-        <ChipButton number="10" styles={{borderColor: "lightblue", background: "lightblue"}} manejoEvento={()=>{addChip(10)}}/>
-        <ChipButton number="25" styles={{borderColor: "purple", background: "purple"}} manejoEvento={()=>{addChip(25)}}/>
-        <ChipButton number="100" styles={{borderColor: "red", background: "red"}} manejoEvento={()=>{addChip(100)}}/>
+        {chipButtonsInfo.map((chip)=>(
+          <ChipButton key={chip.key} number={chip.value} styles={{borderColor: chip.borderColor, background: chip.backgroundColor}} manejoEvento={handlerChipClick}/>
+        ))}
       </div>
 
       <div className="action-buttons">
