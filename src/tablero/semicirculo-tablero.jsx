@@ -2,19 +2,23 @@ import './semicirculo-tablero.css'
 import './letreros-tablero.css'
 import Card from './card'
 import Deck from './deck.jsx'
+import PlayerDeck from './playerDeck.jsx'
+import { useState } from 'react'
 
-function CircleGameZone(){
+function CircleGameZone({ cards, textBanker, textPlayer}){
+
   return (
     <>
     <div className='contenedor-principal'>
       {/*LETREROS*/}
       <div className='banker-zone'>
         <div className='cards-container'>
-          <div><Card number="A" suit="hearts"/></div>
-          <div style={{top: 10, left: 30, position: "absolute"}}><Card number="K" suit="clubs" /></div>
+          <PlayerDeck forwardCard={cards[0]} topCard={cards[1]}/>
         </div>
         <p>Banker</p>
-        <div className='bet-box'>0</div>
+        <div className='bet-box'>
+          {textBanker}
+        </div>
       </div>
       
       <div className='bet-tie'>
@@ -30,12 +34,11 @@ function CircleGameZone(){
 
       <div className='player-zone'>
         <div className='cards-container'>
-          <Card number="10" suit="spades"/>
-          <div style={{top: 10, left: 30, position: "absolute"}}><Card number="7" suit="diamonds"/></div>
+          <PlayerDeck forwardCard={cards[2]} topCard={cards[3]}/>
         </div>
         <p>Player</p>
         <div className='bet-box'>
-          0
+          {textPlayer}
         </div>
       </div>
 

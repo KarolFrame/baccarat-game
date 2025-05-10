@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import ChipButton from './chip-button';
 import './BaccaratTable.css';
+import StartButton from './start-button';
 
-function BaccaratTable() {
+function BaccaratTable({onStart, buttonDisabled}) {
   const [wager, setWager] = useState(0);
   //const [selectedChip, setSelectedChip] = useState(null);
   const [betHistory, setBetHistory] = useState([]);
@@ -50,7 +51,7 @@ function BaccaratTable() {
       </div>
 
       <div className="action-buttons">
-        <button className="start-button">Start Game</button>
+        <StartButton onClick={onStart} buttonDisabled={buttonDisabled}/>
         <div className="undo-clear-buttons">
           <button onClick={undoBet} className="undo-button">Undo bet</button>
           <button onClick={clearBet} className="clear-button">Clear</button>
