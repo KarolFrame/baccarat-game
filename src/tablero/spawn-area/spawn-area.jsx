@@ -35,7 +35,7 @@ function SpawnArea(props){
                 playerSpawn.style.display = "visible";
               }
               return (
-                  <ChipButton number={chip.value} styles={{borderColor: chip.borderColor, background: chip.backgroundColor}}/>
+                  <ChipButton styles={{borderColor: chip.borderColor, background: chip.backgroundColor}}/>
               )
             }
           })}
