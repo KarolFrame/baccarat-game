@@ -1,0 +1,49 @@
+.chip-spawn-area{
+  position: absolute;
+  left: 500px;
+  width: 100px;
+  height: 100px;
+  /* border: 1px solid white; */
+  z-index: 10;
+}
+
+.chip-relative-spawn{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.chip-relative-spawn div{
+  position: absolute;
+
+}
+
+.chip-relative-spawn div:nth-child(1) {
+  top: 25px;
+  left: 15px;
+}
+.chip-relative-spawn div:nth-child(2) {
+  top: 17px;
+  left: 15px;
+}
+.chip-relative-spawn div:nth-child(3) {
+  top: 9px;
+  left: 15;
+}
+.chip-relative-spawn div:nth-child(4) {
+  top: 1px;
+  left: 15px;
+}
+
+#tie-spawn{
+  bottom: 475px;
+}
+#banker-spawn{
+  bottom: 370px;
+}
+#player-spawn{
+  bottom: 275px;
+}
+

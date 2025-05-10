@@ -1,7 +1,8 @@
 import "./tablero-main.css"
 import CircleGameZone from "./semicirculo-tablero.jsx"
 import BaccaratTable from "./BaccaratTable.jsx"
-import { useState } from "react"
+import SpawnArea from "./spawn-area/spawn-area.jsx"
+import { useEffect, useState } from "react"
 
 const _random = (max) =>{
   return Math.floor(Math.random() * max);
@@ -52,12 +53,21 @@ function TableroMain(){
   setTextPlayer(_finalValue(newCards, 2, 3));
   setButtonDisabled(true);
 };
+  const [estadoZona, setEstadoZona] = useState(null)
+  const [listaFichas, setListaFichas] = useState([])
+  
+  useEffect(()=>{
+    console.log(`Desde TableroMain => ${estadoZona}`);
+  },[estadoZona])
 
   return (
     <>
     <div className="tablero_main">
-      <CircleGameZone cards={cards} textBanker={textBanker} textPlayer={textPlayer}/>
-      <BaccaratTable onStart={startGame} buttonDisabled={buttonDisabled}/>
+      <SpawnArea id="tie-spawn" lista={listaFichas} zonaSeleccionada={estadoZona}/>
+      <SpawnArea id="banker-spawn" lista={listaFichas} zonaSeleccionada={estadoZona}/>
+      <SpawnArea id="player-spawn" lista={listaFichas} zonaSeleccionada={estadoZona}/>
+      <CircleGameZone cards={cards} textBanker={textBanker} textPlayer={textPlayer} obtenerZonaSeleccionada={setEstadoZona} />
+      <BaccaratTable onStart={startGame} buttonDisabled={buttonDisabled} obtenerLista={setListaFichas}/>
     </div>
     </>
   )
